@@ -1,0 +1,30 @@
+{
+  "name": "sioweb/metadata-multi-select",
+  "description": "Mit diesem Modul können Select-Optionen in der Metadata als 'Multiple' gekennzeichnet werden.",
+  "type": "oxideshop-module",
+  "keywords": [
+    "oxid",
+    "modules",
+    "metadata"
+  ],
+  "homepage": "https://www.sioweb.de",
+  "license": [
+    "GPL-3.0-only"
+  ],
+  "extra": {
+    "oxideshop": {
+      "blacklist-filter": [
+        "documentation/**/*.*"
+      ],
+      "target-directory": "sioweb/MetadataMultiSelect"
+    }
+  },
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sioweb\\Oxid\\MetadataMultiSelect\\": "../../../source/modules/sioweb/MetadataMultiSelect/"
+    }
+  }
+}
