@@ -27,8 +27,6 @@ Ein Modul könnte z.B. nur auf bestimmte Controller beschränkt werden. Diese k�
 
 ```php
 
-use OxidEsales\Eshop\Core\Model\ListModel;
-
 /**
  * Metadata version
  */
@@ -36,7 +34,7 @@ $sMetadataVersion = '2.0';
 
 $sQ = "SELECT oxstdurl, oxobjectid, oxseourl FROM oxseo WHERE oxtype='static' && oxlang = ? && oxshopid = ? GROUP BY oxobjectid ORDER BY oxstdurl";
 
-$oStaticUrlList = oxNew(ListModel::class);
+$oStaticUrlList = oxNew(\OxidEsales\Eshop\Core\Model\ListModel::class);
 $oStaticUrlList->init('oxbase', 'oxseo');
 $oStaticUrlList->selectString($sQ, [0, 1]);
 
@@ -52,8 +50,6 @@ $aModule = [
 
 ```php
 
-use OxidEsales\Eshop\Core\Model\ListModel;
-
 $sLangName = "Deutsch";
 
 $aLang = array(
@@ -64,7 +60,7 @@ $aLang = array(
 
 $sQ = "SELECT oxstdurl, oxobjectid, oxseourl FROM oxseo WHERE oxtype='static' && oxlang = ? && oxshopid = ? GROUP BY oxobjectid ORDER BY oxstdurl";
 
-$oStaticUrlList = oxNew(ListModel::class);
+$oStaticUrlList = oxNew(\OxidEsales\Eshop\Core\Model\ListModel::class);
 $oStaticUrlList->init('oxbase', 'oxseo');
 $oStaticUrlList->selectString($sQ, [0, 1]);
 foreach($oStaticUrlList as $key => $oItem) {
