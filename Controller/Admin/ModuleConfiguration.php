@@ -67,8 +67,7 @@ class ModuleConfiguration extends ModuleConfiguration_parent
         foreach ($this->_aConfParams as $sType => $sParam) {
             $aConfVars = $oConfig->getRequestParameter($sParam);
             if (is_array($aConfVars)) {
-                
-                if($sType === 'select' && count(array_shift((array_values($aConfVars)))) > 1) {
+                if($sType === 'select' && count(array_shift((array_values($aConfVars))))) {
                     $_POST['confselects'][array_shift((array_keys($aConfVars)))] = serialize(array_shift((array_values($aConfVars))));
                 }
             }
