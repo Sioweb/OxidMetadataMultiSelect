@@ -12,3 +12,9 @@ $aModule = [
     ]
 ];
 ```
+
+## Optionen
+
+- (bool) `multiple` Markiert das Select als `multiple=>"true"`
+- (int) `size` Wird per default auf 8 gestellt.
+- (string) `style` wird als Inline-CSS-Attribute eingefügt
