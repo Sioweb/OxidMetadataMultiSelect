@@ -1,13 +1,10 @@
 {
   "name": "sioweb/oxid-metadata-multi-select",
   "description": "Mit diesem Modul können Select-Optionen in der Metadata als 'Multiple' gekennzeichnet werden.",
-  "type": "oxideshop-module",
-  "keywords": [
-    "oxid",
-    "modules",
-    "metadata"
-  ],
-  "homepage": "https://www.sioweb.de",
+  "type": "oxidkernel-module",
+  "version": "6.0.0",
+  "keywords": ["oxid","modules","metadata"],
+  "homepage": "https://github.com/Sioweb/OxidMetadataMultiSelect",
   "license": [
     "GPL-3.0-only"
   ],
@@ -16,15 +13,24 @@
       "blacklist-filter": [
         "documentation/**/*.*"
       ],
+      "source-directory": "./src/Resources/oxid",
       "target-directory": "sioweb/MetadataMultiSelect"
     }
   },
   "require": {
-    "php": ">=7.0"
+    "php": "^7.0",
+    "sioweb/ccevent-git": "*",
+    "oxid-community/symfony-kernel": "*"
   },
   "autoload": {
     "psr-4": {
-      "Sioweb\\Oxid\\MetadataMultiSelect\\": "../../../source/modules/sioweb/MetadataMultiSelect/"
+      "Sioweb\\Oxid\\MetadataMultiSelect\\": "src/"
     }
+  },
+  "scripts": {
+    "package-scripts": [
+      "@config.localhost==1",
+      "Sioweb\\CCEvent\\Git\\Composer\\Git::init --repository=https://github.com/Sioweb/OxidMetadataMultiSelect"
+    ]
   }
 }
