@@ -2,7 +2,6 @@
   "name": "sioweb/oxid-metadata-multi-select",
   "description": "Mit diesem Modul können Select-Optionen in der Metadata als 'Multiple' gekennzeichnet werden.",
   "type": "oxidkernel-module",
-  "version": "6.0.0",
   "keywords": ["oxid","modules","metadata"],
   "homepage": "https://github.com/Sioweb/OxidMetadataMultiSelect",
   "license": [
