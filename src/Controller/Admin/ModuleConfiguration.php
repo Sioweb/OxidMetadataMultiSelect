@@ -66,9 +66,11 @@ class ModuleConfiguration extends ModuleConfiguration_parent
         $this->_sModuleId = $this->getEditObjectId();
         foreach ($this->_aConfParams as $sType => $sParam) {
             $aConfVars = $oConfig->getRequestParameter($sParam);
-            if (is_array($aConfVars)) {
-                if($sType === 'select' && count(array_shift((array_values($aConfVars))))) {
-                    $_POST['confselects'][array_shift((array_keys($aConfVars)))] = serialize(array_shift((array_values($aConfVars))));
+            if ($sType === 'select') {
+                foreach($aConfVars as $confVarName => $confVarValue) {
+                    if(is_array($confVarValue)) {
+                        $_POST['confselects'][$confVarName] = serialize(array_values($confVarValue));
+                    }
                 }
             }
         }
